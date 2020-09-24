@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 /**------------------- Classe entidade usuário pessoa -------------------*/
 
 @Entity
+
 public class UsuarioPessoa {
 
 	@Id
