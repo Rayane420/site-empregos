@@ -8,6 +8,8 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org
 		<class>model.UsuarioPessoa</class>
 		<class>model.EmailUser</class>
 		<class>model.TelefoneUser</class>
+		<class>model.Vagas</class>
+		<class>model.Empresas</class>
 		
 		
 		<properties>
