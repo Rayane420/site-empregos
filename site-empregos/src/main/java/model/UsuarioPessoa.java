@@ -22,14 +22,14 @@ public class UsuarioPessoa {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private String nomeCompleto;
-	private String login;
-	private String senha;
-	private String sexo;
-	private String dataNascimento;
-	private String nacionalidade;
-	private String linkedin;
-	private String github;
+	private String nomeCompleto;//
+	private String login;//
+	private String senha;//
+	private String sexo;//
+	private String dataNascimento;//
+	private String nacionalidade;//
+	private String linkedin;//
+	private String github;//
 	
 	private String cep;
 	private String logradouro;
