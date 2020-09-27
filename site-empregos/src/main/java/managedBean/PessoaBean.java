@@ -18,7 +18,7 @@ public class PessoaBean {
 	private UsuarioPessoa usuarioPessoa = new UsuarioPessoa();
 	private DaoUsuario<UsuarioPessoa> daoGeneric = new DaoUsuario<UsuarioPessoa>(); 
 	private List<UsuarioPessoa> list = new ArrayList<UsuarioPessoa>();
-	
+	private String campoBusca;
 	
 
 	@PostConstruct
@@ -55,5 +55,21 @@ public class PessoaBean {
 	public List<UsuarioPessoa> getList() {
 		return list;
 	}
+	
+	public void pesquisar() {
+		daoGeneric.buscar(campoBusca);
+	}
+
+
+	public String getCampoBusca() {
+		return campoBusca;
+	}
+
+
+	public void setCampoBusca(String campoBusca) {
+		this.campoBusca = campoBusca;
+	}
+	
+	
 	
 }

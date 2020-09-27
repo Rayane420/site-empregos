@@ -27,6 +27,13 @@ public class DaoGeneric<E> {
 		
 	}
 	
+	public E buscar (Long id, Class<E> entidade) { //pesquisando a Primary Key
+		entityManager.clear(); //limpando os dados que ja foram excluídos
+		E e = (E) entityManager.createQuery("from " + entidade.getSimpleName() + " where id = " + id).getSingleResult();
+		
+	return e; //retornando a entidade que pesquisou
+	}
+	
 	public List<E> listar (Class<E> entidade){
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();

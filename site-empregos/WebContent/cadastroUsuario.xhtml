@@ -76,7 +76,22 @@
 		</center>	
 		</h:form>
 		
-		<h:form id="formTable">
+		<br/>
+		<br/>
+		
+		<h:form>
+		<center>
+			<p:panel header="Pesquisar Usuários Cadastrados">
+				<h:panelGrid columns="3">
+					<h:outputLabel value="Nome"/>		
+					<p:inputText value="#{pessoaBean.campoBusca}"/>	
+					<p:commandButton value="Buscar" actionListener="#{pessoaBean.pesquisar}" update="formtable"/>	
+				</h:panelGrid>			
+			</p:panel>
+		</center>
+		</h:form>
+		
+		<h:form id="formtable">
 		<p:dataTable value="#{pessoaBean.list}" var="user">
 			<p:column headerText="ID"  width="20">
 				<h:outputText value="#{user.id}"/>
