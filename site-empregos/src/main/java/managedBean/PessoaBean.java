@@ -7,7 +7,6 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
-import dao.DaoGeneric;
 import dao.DaoUsuario;
 import model.UsuarioPessoa;
 
@@ -44,6 +43,7 @@ public class PessoaBean {
 	public String salvar() {
 		daoGeneric.salvar(usuarioPessoa);
 		list.add(usuarioPessoa);
+		
 		return "";
 	}
 	
@@ -57,7 +57,7 @@ public class PessoaBean {
 	}
 	
 	public void pesquisar() {
-		daoGeneric.buscar(campoBusca);
+		list = daoGeneric.pesquisar(campoBusca);
 	}
 
 

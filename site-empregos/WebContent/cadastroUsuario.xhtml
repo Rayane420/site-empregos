@@ -8,10 +8,11 @@
 
 <h:body>
 		<br/><br/><br/><br/>
-		<h:form id="formCadastro">
-		<center>
-		<h:panelGrid columns="4">
 		
+		<h:form id="formulario">
+		<center>
+		
+		<h:panelGrid columns="4">
 		
 				<center><p:outputLabel>- Dados Pessoais -</p:outputLabel></center>	
 				<p:outputLabel/>
@@ -23,6 +24,9 @@
 				<p:inputText value="#{pessoaBean.usuarioPessoa.nomeCompleto}" id="nomeC"  size="40">
 				<p:watermark value="Informe o nome" for="nomeC"></p:watermark>
 				</p:inputText>
+				
+				<p:outputLabel>CPF: </p:outputLabel>			
+				<p:inputMask value="#{pessoaBean.usuarioPessoa.cpf}" size="15" mask="999.999.999-99"/>
 				
 				<p:outputLabel>Data Nascimento: </p:outputLabel>			
 				<p:inputMask value="#{pessoaBean.usuarioPessoa.dataNascimento}" mask="99/99/9999"  size="10"/>
@@ -37,9 +41,8 @@
 					<f:selectItem itemValue="Feminino" itemLabel="Feminino"/>
 					<f:selectItem itemValue="Outro" itemLabel="Outro"/>
 				</p:selectOneMenu>
-				<p:outputLabel/>
+						
 				
-				<p:outputLabel/>
 				<center><p:outputLabel>- Dados de Contato -</p:outputLabel></center>	
 				<p:outputLabel/>
 				
@@ -53,9 +56,8 @@
 				
 				<br/>			
 				<center><p:outputLabel>-- Dados de Login --</p:outputLabel></center>	
-				
-				
 				<p:outputLabel/>
+				
 				<p:outputLabel>Login: </p:outputLabel>			
 				<p:inputText value="#{pessoaBean.usuarioPessoa.login}"/>
 				
@@ -66,10 +68,12 @@
 			
 			<br/>
 			
-			<p:commandButton value="Salvar" ajax="false" action="#{pessoaBean.salvar}"/>
+			<p:commandButton value="Salvar" ajax="false" 
+			action="#{pessoaBean.salvar}"/>
 			
 			<p:commandButton value="Novo" immediate="true"
-			action="#{pessoaBean.novo}"> <f:ajax execute="@this" render="@form"/>
+				action="#{pessoaBean.novo}"> 
+				<f:ajax execute="@this" render="@form"/>
 			</p:commandButton>
 			
 			
@@ -80,19 +84,19 @@
 		<br/>
 		
 		<h:form>
-		<center>
 			<p:panel header="Pesquisar Usuários Cadastrados">
 				<h:panelGrid columns="3">
-					<h:outputLabel value="Nome"/>		
+					<h:outputLabel value="Nome: "/>		
 					<p:inputText value="#{pessoaBean.campoBusca}"/>	
-					<p:commandButton value="Buscar" actionListener="#{pessoaBean.pesquisar}" update="formtable"/>	
+					<p:commandButton value="Buscar" actionListener="#{pessoaBean.pesquisar}" update="formtable" />	
 				</h:panelGrid>			
 			</p:panel>
-		</center>
 		</h:form>
+		
 		
 		<h:form id="formtable">
 		<p:dataTable value="#{pessoaBean.list}" var="user">
+		
 			<p:column headerText="ID"  width="20">
 				<h:outputText value="#{user.id}"/>
 			</p:column>

@@ -9,13 +9,18 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 
 /**------------------- Classe entidade usuário pessoa -------------------*/
 
 @Entity
-
+@NamedQueries ({
+	@NamedQuery(name = "UsuarioPessoa.todos", query = "select u from UsuarioPessoa u"),
+	@NamedQuery(name = "UsuarioPessoa.buscaPorNome", query = "select u from UsuarioPessoa u where u.nomeCompleto = :nomeCompleto")
+})
 public class UsuarioPessoa {
 
 	@Id
@@ -28,6 +33,8 @@ public class UsuarioPessoa {
 	private String sexo;//
 	private String dataNascimento;//
 	private String nacionalidade;//
+	private String cpf;
+	
 	private String linkedin;//
 	private String github;//
 	
@@ -46,6 +53,21 @@ public class UsuarioPessoa {
 	@OneToMany (mappedBy = "usuarioPessoa", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true) //ligação um para muitos mapeado pelo usuarioPessoa
 	private List<EmailUser> emails = new ArrayList<EmailUser>();
 	
+	
+	
+	
+	public List<TelefoneUser> getTelefones() {
+		return telefones;
+	}
+	public void setTelefones(List<TelefoneUser> telefones) {
+		this.telefones = telefones;
+	}
+	public List<EmailUser> getEmails() {
+		return emails;
+	}
+	public void setEmails(List<EmailUser> emails) {
+		this.emails = emails;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -137,15 +159,23 @@ public class UsuarioPessoa {
 		this.uf = uf;
 	}
 	
+	public String getCpf() {
+		return cpf;
+	}
 	
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	
+
+
 	@Override
 	public String toString() {
 		return "UsuarioPessoa [id=" + id + ", nomeCompleto=" + nomeCompleto + ", login=" + login + ", senha=" + senha
 				+ ", sexo=" + sexo + ", dataNascimento=" + dataNascimento + ", nacionalidade=" + nacionalidade
-				+ ", linkedin=" + linkedin + ", github=" + github + ", cep=" + cep + ", logradouro=" + logradouro
-				+ ", complemento=" + complemento + ", bairro=" + bairro + ", localidade=" + localidade + ", uf=" + uf
-				+ "]";
+				+ ", cpf=" + cpf + ", linkedin=" + linkedin + ", github=" + github + ", cep=" + cep + ", logradouro="
+				+ logradouro + ", complemento=" + complemento + ", bairro=" + bairro + ", localidade=" + localidade
+				+ ", uf=" + uf + ", telefones=" + telefones + ", emails=" + emails + "]";
 	}
 	@Override
 	public int hashCode() {
