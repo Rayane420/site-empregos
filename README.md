@@ -1,4 +1,5 @@
-# site-empregos
+# site de empregos - JOB-ME
+
 site de empregos para praticas de conhecimento em java - jpa - hibernate - primefaces - jsf ...
 
 #### O site contará com as seguintes Páginas:
