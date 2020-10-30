@@ -8,7 +8,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @Entity
-
+@NamedQueries({
+	@NamedQuery(name = "Vagas.todos", query = "select v from Vagas v"),
+	@NamedQuery(name = "Vagas.titulo", query = "select v from Vagas v where v.titulo = :titulo")
+})
 public class Vagas {
 	
 	@Id
