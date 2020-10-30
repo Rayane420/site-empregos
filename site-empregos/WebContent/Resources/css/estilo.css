@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.body{
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	color: red;
+	margin:0;
+	background-color: #D3D3D3;
+}
+
+a:link, a:visited {
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+	color: #ff8000;
+	
+	}
+
+a:hover {
+	text-decoration: none;  
+	color:#000; 
+	font-size:120%; 
+	}
+	
+a:active {
+	text-decoration: none
+	}	
+
+#titulo {
+	width: 248px;
+  	height: 60px;
+  	font-size: 24px;
+	font-family: 'Roboto', sans-serif;
+}

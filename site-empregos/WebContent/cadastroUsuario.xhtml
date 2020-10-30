@@ -2,31 +2,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:p="http://primefaces.org/ui">
 	  
 <h:head></h:head>	  
 
 <h:body>
+		<ui:include src="menu.xhtml"/>
 		<br/><br/><br/><br/>
 		
 		<h:form id="formulario">
 		<center>
-		
+		<h:messages showDetail="true" showSummary="false" id="msg"/>
 		<h:panelGrid columns="4">
 		
-				<center><p:outputLabel>- Dados Pessoais -</p:outputLabel></center>	
+				<p:outputLabel><h3> Dados Pessoais </h3></p:outputLabel>
 				<p:outputLabel/>
-				
-				<p:outputLabel>ID: </p:outputLabel>			
-				<p:inputText readonly="true" value="#{pessoaBean.usuarioPessoa.id}" size="5" />
-				
+				<p:outputLabel/><p:outputLabel/>
 				<p:outputLabel>Nome Completo: </p:outputLabel>			
 				<p:inputText value="#{pessoaBean.usuarioPessoa.nomeCompleto}" id="nomeC"  size="40">
-				<p:watermark value="Informe o nome" for="nomeC"></p:watermark>
+				<p:watermark value="Nome e sobrenome" for="nomeC"></p:watermark>
 				</p:inputText>
 				
 				<p:outputLabel>CPF: </p:outputLabel>			
 				<p:inputMask value="#{pessoaBean.usuarioPessoa.cpf}" size="15" mask="999.999.999-99"/>
+				
+				<p:outputLabel>Cargo de Interesse: </p:outputLabel>			
+				<p:inputMask value="#{pessoaBean.usuarioPessoa.cargoDesejado}" size="15" />
 				
 				<p:outputLabel>Data Nascimento: </p:outputLabel>			
 				<p:inputMask value="#{pessoaBean.usuarioPessoa.dataNascimento}" mask="99/99/9999"  size="10"/>
@@ -41,10 +43,13 @@
 					<f:selectItem itemValue="Feminino" itemLabel="Feminino"/>
 					<f:selectItem itemValue="Outro" itemLabel="Outro"/>
 				</p:selectOneMenu>
-						
+			</h:panelGrid>
+			<br/>
+			<br/>
+			<h:panelGrid columns="4">			
 				
-				<center><p:outputLabel>- Dados de Contato -</p:outputLabel></center>	
-				<p:outputLabel/>
+				<p:outputLabel><h3>Dados de Contato </h3> </p:outputLabel>
+				<p:outputLabel/><p:outputLabel/><p:outputLabel/>
 				
 				<p:outputLabel>linkedin: </p:outputLabel>			
 				<p:inputText  value="#{pessoaBean.usuarioPessoa.linkedin}" size="35"/>
@@ -52,10 +57,12 @@
 				<p:outputLabel>GitHub: </p:outputLabel>			
 				<p:inputText value="#{pessoaBean.usuarioPessoa.github}" size="35"/>
 				
-				
-				
+			</h:panelGrid>	
+			<br/>
+			<br/>
+			<h:panelGrid columns="4">	
 				<br/>			
-				<center><p:outputLabel>-- Dados de Login --</p:outputLabel></center>	
+				<center><p:outputLabel><h3>Dados de Login </h3></p:outputLabel></center>	
 				<p:outputLabel/>
 				
 				<p:outputLabel>Login: </p:outputLabel>			
@@ -67,14 +74,11 @@
 			</h:panelGrid>
 			
 			<br/>
-			
-			<p:commandButton value="Salvar" ajax="false" 
+			<br/>
+			<br/>
+			<p:commandButton value="Finalizar Cadastro" ajax="false" 
 			action="#{pessoaBean.salvar}"/>
-			
-			<p:commandButton value="Novo" immediate="true"
-				action="#{pessoaBean.novo}"> 
-				<f:ajax execute="@this" render="@form"/>
-			</p:commandButton>
+
 			
 			
 		</center>	
@@ -83,48 +87,7 @@
 		<br/>
 		<br/>
 		
-		<h:form>
-			<p:panel header="Pesquisar Usuários Cadastrados">
-				<h:panelGrid columns="3">
-					<h:outputLabel value="Nome: "/>		
-					<p:inputText value="#{pessoaBean.campoBusca}"/>	
-					<p:commandButton value="Buscar" actionListener="#{pessoaBean.pesquisar}" update="formtable" />	
-				</h:panelGrid>			
-			</p:panel>
-		</h:form>
 		
-		
-		<h:form id="formtable">
-		<p:dataTable value="#{pessoaBean.list}" var="user">
-		
-			<p:column headerText="ID"  width="20">
-				<h:outputText value="#{user.id}"/>
-			</p:column>
-		
-			<p:column headerText="Nome"  width="20">
-				<h:outputText value="#{user.nomeCompleto}"/>
-			</p:column>
-			
-			<p:column headerText="Data Nascimento"  width="20">
-				<h:outputText value="#{user.dataNascimento}"/>
-			</p:column>
-			
-			<p:column headerText="Nacionalidade"  width="20">
-				<h:outputText value="#{user.nacionalidade}"/>
-			</p:column>
-			
-			<p:column headerText="Linkedin"  width="20">
-				<h:outputText value="#{user.linkedin}"/>
-			</p:column>
-			
-			<p:column headerText="Github"  width="20">
-				<h:outputText value="#{user.github}"/>
-			</p:column>
-		
-		</p:dataTable>
-		
-		
-		</h:form>
 		
 	</h:body>
 

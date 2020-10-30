@@ -3,15 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:p="http://primefaces.org/ui">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="StyleSheet" type="text/css" href="Resources/css/estilo.css" media="screen"/>
+	<title>Home</title>
 </head>
 
 	<h:body>
-	
-		<h:outputLabel value="AQUI FICARÁ A TELA DE LOGIN"/>
+		<ui:include src="menu.xhtml"/>
+		<center>
+		<h:form id="formLogin" style="margin-top:15%;" >
+			<div id="titulo">Realize o login abaixo</div>
+				<p:panelGrid columns="2">
+				
+					<p:outputLabel value="Login: "/>
+					<p:inputText value="#{pessoaBean.usuarioPessoa.login}"/>
+					<p:outputLabel value="Senha: "/>
+					<p:password value="#{pessoaBean.usuarioPessoa.senha}"/>
+					
+					<p:commandButton value="Logar" action="#{pessoaBean.logar}"/>
+				</p:panelGrid>
+			
+		</h:form>
+		<br/>
+		
+			<a style="margin-top:20%;" href="recuperarSenha.jsf">Recuperar senha </a>
+			<a>-------</a>
+			<a href="cadastroUsuario.jsf">  Fazer Cadastro</a>
+		</center>
 		
 	</h:body>
 

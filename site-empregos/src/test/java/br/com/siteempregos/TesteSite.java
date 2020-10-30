@@ -2,8 +2,8 @@ package br.com.siteempregos;
 
 import org.junit.Test;
 
-import dao.DaoGeneric;
-import model.UsuarioPessoa;
+import br.com.dao.DaoGeneric;
+import br.com.model.UsuarioPessoa;
 
 public class TesteSite {
 	

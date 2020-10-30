@@ -5,11 +5,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="site-empregos">
 	
-		<class>model.UsuarioPessoa</class>
-		<class>model.EmailUser</class>
-		<class>model.TelefoneUser</class>
-		<class>model.Vagas</class>
-		<class>model.Empresas</class>
+		<class>br.com.model.UsuarioPessoa</class>
+		<class>br.com.model.EmailUser</class>
+		<class>br.com.model.TelefoneUser</class>
+		<class>br.com.model.Vagas</class>
+		<class>br.com.model.Empresas</class>
 		
 		
 		<properties>
