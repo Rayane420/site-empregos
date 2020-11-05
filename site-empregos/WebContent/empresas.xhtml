@@ -18,48 +18,13 @@
 		<h:form>
 		<center>
 			<p:panel header="Pesquisar Empresas">
-				<h:panelGrid columns="3">
-					<h:outputLabel/>		
-					<p:inputText value="#{pessoaBean.campoBusca}" id="nomeE" size="80"/>	
-					<p:commandButton value="Buscar Empresa" actionListener="#{pessoaBean.pesquisar}" update="formtable"/>	
-					<p:watermark value="Informe o nome da empresa" for="nomeE"></p:watermark>
-				</h:panelGrid>			
+					
 			</p:panel>
 		</center>	
 		</h:form>
 		
 		
-		<h:form id="formtable">
-		<p:dataTable value="#{pessoaBean.list}" var="user">
 		
-			<p:column headerText="ID"  width="20">
-				<h:outputText value="#{user.id}"/>
-			</p:column>
-		
-			<p:column headerText="Nome"  width="20">
-				<a href="vagas.jsf"><h:outputText value="#{user.nomeCompleto}"/></a>
-			</p:column>
-			
-			<p:column headerText="Data Nascimento"  width="20">
-				<h:outputText value="#{user.dataNascimento}"/>
-			</p:column>
-			
-			<p:column headerText="Nacionalidade"  width="20">
-				<h:outputText value="#{user.nacionalidade}"/>
-			</p:column>
-			
-			<p:column headerText="Linkedin"  width="20">
-				<h:outputText value="#{user.linkedin}"/>
-			</p:column>
-			
-			<p:column headerText="Github"  width="20">
-				<h:outputText value="#{user.github}"/>
-			</p:column>
-		
-		</p:dataTable>
-		
-		
-		</h:form>
 		
 		<a href="cadastrarEmpresa.jsf">Cadastrar minha empresa</a>
 		

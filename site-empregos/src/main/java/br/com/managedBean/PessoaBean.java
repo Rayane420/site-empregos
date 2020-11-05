@@ -46,7 +46,8 @@ public class PessoaBean {
 		daoGeneric.salvar(usuarioPessoa);
 		list.add(usuarioPessoa);
 		FacesContext.getCurrentInstance().addMessage(null, 
-				new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação:","Cadastro realizado com sucesso!"));
+				new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação:","Cadastro realizado com sucesso! Faça login"));
+		usuarioPessoa = new UsuarioPessoa();
 		return "";
 	}
 	

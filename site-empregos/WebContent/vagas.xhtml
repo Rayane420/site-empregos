@@ -33,7 +33,7 @@
 		<p:dataTable value="#{vagasBean.list}" var="vagas">
 		
 			<p:column headerText="Titulo"  width="20">
-				<h:outputText value="#{vagas.titulo}"/>
+			<a href="detalheVaga.jsf">	<h:outputText value="#{vagas.titulo}"/> </a>
 			</p:column>
 			
 			<p:column headerText="Cidade"  width="20">

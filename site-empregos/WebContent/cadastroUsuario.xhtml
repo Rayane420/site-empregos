@@ -5,33 +5,42 @@
 	  xmlns:ui="http://java.sun.com/jsf/facelets"
 	  xmlns:p="http://primefaces.org/ui">
 	  
-<h:head></h:head>	  
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="StyleSheet" type="text/css" href="Resources/css/estiloForm.css" media="screen"/>
+	<title>Cadastrar</title>
+</h:head>	  
+
+		<ui:include src="menu.xhtml"/>
+
 
 <h:body>
-		<ui:include src="menu.xhtml"/>
+		
 		<br/><br/><br/><br/>
 		
 		<h:form id="formulario">
 		<center>
-		<h:messages showDetail="true" showSummary="false" id="msg"/>
-		<h:panelGrid columns="4">
-		
-				<p:outputLabel><h3> Dados Pessoais </h3></p:outputLabel>
-				<p:outputLabel/>
-				<p:outputLabel/><p:outputLabel/>
+		<p:growl showDetail="true" showSummary="false" id="msg"/>
+		<h2> Realize seu cadastro abaixo</h2>
+		<h:panelGrid >
+				
+				<br/>
+				<legend><h3><span class="number">1</span>Dados Pessoais</h3></legend>
+				<br/>
+				
 				<p:outputLabel>Nome Completo: </p:outputLabel>			
-				<p:inputText value="#{pessoaBean.usuarioPessoa.nomeCompleto}" id="nomeC"  size="40">
+				<p:inputText value="#{pessoaBean.usuarioPessoa.nomeCompleto}" id="nomeC"  size="40" required="true" requiredMessage="Informe seu nome">
 				<p:watermark value="Nome e sobrenome" for="nomeC"></p:watermark>
 				</p:inputText>
 				
 				<p:outputLabel>CPF: </p:outputLabel>			
-				<p:inputMask value="#{pessoaBean.usuarioPessoa.cpf}" size="15" mask="999.999.999-99"/>
+				<p:inputMask value="#{pessoaBean.usuarioPessoa.cpf}" size="15" mask="999.999.999-99" required="true" requiredMessage="Obrigatório informar o CPF"/>
 				
 				<p:outputLabel>Cargo de Interesse: </p:outputLabel>			
 				<p:inputMask value="#{pessoaBean.usuarioPessoa.cargoDesejado}" size="15" />
 				
 				<p:outputLabel>Data Nascimento: </p:outputLabel>			
-				<p:inputMask value="#{pessoaBean.usuarioPessoa.dataNascimento}" mask="99/99/9999"  size="10"/>
+				<p:inputMask value="#{pessoaBean.usuarioPessoa.dataNascimento}" mask="99/99/9999"  size="15"/>
 				
 				<p:outputLabel>Nacionalidade: </p:outputLabel>			
 				<p:inputText value="#{pessoaBean.usuarioPessoa.nacionalidade}" size="15"/>
@@ -43,43 +52,52 @@
 					<f:selectItem itemValue="Feminino" itemLabel="Feminino"/>
 					<f:selectItem itemValue="Outro" itemLabel="Outro"/>
 				</p:selectOneMenu>
-			</h:panelGrid>
 			<br/>
 			<br/>
-			<h:panelGrid columns="4">			
+			<br/>
 				
-				<p:outputLabel><h3>Dados de Contato </h3> </p:outputLabel>
-				<p:outputLabel/><p:outputLabel/><p:outputLabel/>
+				<br/>
+				<legend><h3><span class="number">2</span>Dados de Contato</h3></legend>
+				<br/>
+				
 				
 				<p:outputLabel>linkedin: </p:outputLabel>			
-				<p:inputText  value="#{pessoaBean.usuarioPessoa.linkedin}" size="35"/>
+				<p:inputText value="#{pessoaBean.usuarioPessoa.linkedin}" id="linkedin"  size="40">
+				<p:watermark value="https://www.linkedin.com/in/usuario" for="linkedin"></p:watermark>
+				</p:inputText>
 				
-				<p:outputLabel>GitHub: </p:outputLabel>			
-				<p:inputText value="#{pessoaBean.usuarioPessoa.github}" size="35"/>
-				
-			</h:panelGrid>	
+				<p:outputLabel>GitHub: </p:outputLabel>		
+				<p:inputText value="#{pessoaBean.usuarioPessoa.github}" id="github"  size="40">
+				<p:watermark value="https://github.com/usuario" for="github"></p:watermark>
+				</p:inputText>
+			
 			<br/>
 			<br/>
-			<h:panelGrid columns="4">	
-				<br/>			
-				<center><p:outputLabel><h3>Dados de Login </h3></p:outputLabel></center>	
-				<p:outputLabel/>
+			<br/>	
+					
+				<br/>
+				<legend><h3><span class="number">3</span>Dados de Acesso</h3></legend>
+				<br/>
 				
 				<p:outputLabel>Login: </p:outputLabel>			
-				<p:inputText value="#{pessoaBean.usuarioPessoa.login}"/>
+				<p:inputText value="#{pessoaBean.usuarioPessoa.login}" required="true" requiredMessage="Informe seu login"/>
 				
 				<p:outputLabel>Senha: </p:outputLabel>			
 				<p:password value="#{pessoaBean.usuarioPessoa.senha}" required="true" requiredMessage="Informe sua senha"/>
 				
-			</h:panelGrid>
+			
 			
 			<br/>
 			<br/>
 			<br/>
+			
 			<p:commandButton value="Finalizar Cadastro" ajax="false" 
 			action="#{pessoaBean.salvar}"/>
 
 			
+			
+			
+			</h:panelGrid>
 			
 		</center>	
 		</h:form>

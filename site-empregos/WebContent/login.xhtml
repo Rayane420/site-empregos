@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="StyleSheet" type="text/css" href="Resources/css/estiloForm.css" media="screen"/>
+	<title>Login</title>
+</h:head>
+	
+	
+	<h:body>
+	
+		<div id="menu">
+		<ui:include src="menu.xhtml"/>
+		</div>
+		
+		<p:growl showDetail="true" showSummary="false" id="msg"/>
+		
+		<center>
+		<h2 style="margin-top:10%;"> Login</h2>
+		<h:form id="formLogin"  >
+		
+				<p:panelGrid>
+				
+				<p:inputText value="#{pessoaBean.usuarioPessoa.login}" id="login"  size="40" 
+				required="true" requiredMessage="Informe seu Login">
+				<p:watermark value="Login" for="login"></p:watermark>
+				</p:inputText>
+				
+				<p:password value="#{pessoaBean.usuarioPessoa.senha}" id="senha"  size="40" 
+				required="true" requiredMessage="Informe sua senha">
+				<p:watermark value="Senha" for="senha"></p:watermark>
+				</p:password>
+					
+					
+					<p:commandButton value="Acessar" action="#{pessoaBean.logar}"/>
+				</p:panelGrid>
+			
+		</h:form>
+		<br/>
+		<div class="linksAcesso">
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+			<a style="margin-top:20%;" href="recuperarSenha.jsf">Recuperar senha </a>
+			&nbsp; &nbsp; &nbsp; &nbsp;
+			<a href="cadastroUsuario.jsf">  Fazer Cadastro</a>
+		</div>
+			
+		</center>
+		
+	</h:body>
+
+</html>
