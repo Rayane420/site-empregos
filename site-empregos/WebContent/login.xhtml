@@ -8,7 +8,7 @@
 	  
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<link rel="StyleSheet" type="text/css" href="Resources/css/estiloForm.css" media="screen"/>
+	<link rel="StyleSheet" type="text/css" href="Resources/css/estiloLogin.css" media="screen"/>
 	<title>Login</title>
 </h:head>
 	
@@ -22,33 +22,37 @@
 		<p:growl showDetail="true" showSummary="false" id="msg"/>
 		
 		<center>
-		<h2 style="margin-top:10%;"> Login</h2>
-		<h:form id="formLogin"  >
 		
+		<h:form id="formLogin" style="margin-top:4%;">
+		<h2 style="margin-top:8%;"> Login</h2>
+		<br/>
+		<br/>
 				<p:panelGrid>
 				
-				<p:inputText value="#{pessoaBean.usuarioPessoa.login}" id="login"  size="40" 
+				<p:inputText value="#{pessoaBean.usuarioPessoa.login}" id="login"  
 				required="true" requiredMessage="Informe seu Login">
-				<p:watermark value="Login" for="login"></p:watermark>
+				<p:watermark value="Usuário" for="login"></p:watermark>
 				</p:inputText>
-				
-				<p:password value="#{pessoaBean.usuarioPessoa.senha}" id="senha"  size="40" 
+				<br/>
+				<p:password value="#{pessoaBean.usuarioPessoa.senha}" id="senha"   
 				required="true" requiredMessage="Informe sua senha">
 				<p:watermark value="Senha" for="senha"></p:watermark>
 				</p:password>
 					
 					
-					<p:commandButton value="Acessar" action="#{pessoaBean.logar}"/>
+				<p:commandButton value="Acessar" action="#{pessoaBean.logar}"/>
 				</p:panelGrid>
+				
+				<br/>
+				<div class="linksAcesso">
+					
+					<a style="margin-top:20%;" href="recuperarSenha.jsf">Recuperar senha </a>
+					&nbsp; &nbsp; &nbsp; &nbsp;
+					<a href="cadastroUsuario.jsf">  Fazer Cadastro</a>
+				</div>
 			
 		</h:form>
-		<br/>
-		<div class="linksAcesso">
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			<a style="margin-top:20%;" href="recuperarSenha.jsf">Recuperar senha </a>
-			&nbsp; &nbsp; &nbsp; &nbsp;
-			<a href="cadastroUsuario.jsf">  Fazer Cadastro</a>
-		</div>
+		
 			
 		</center>
 		

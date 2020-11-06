@@ -3,34 +3,149 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-.body{
-	font-size: 16px;
-	font-family: 'Roboto', sans-serif;
-	color: red;
-	margin:0;
-	background-color: #D3D3D3;
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
 }
 
-a:link, a:visited {
-	font-family: 'Roboto', sans-serif;
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 80px 15px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  opacity: 0.9;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+
+/**------- Inicio css do Menu  ------*/
+nav {
+	margin: 27px auto 0;
+
+	position: relative;
+	width: 960px;
+	height: 50px;
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
 	text-decoration: none;
-	color: #ff8000;
-	
-	}
-
-a:hover {
-	text-decoration: none;  
-	color:#000; 
-	font-size:120%; 
-	}
-	
-a:active {
-	text-decoration: none
-	}	
-
-#titulo {
-	width: 248px;
-  	height: 60px;
-  	font-size: 24px;
-	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
 }
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+a:nth-child(1) {
+	width: 100px;
+}
+a:nth-child(2) {
+	width: 110px;
+}
+a:nth-child(3) {
+	width: 100px;
+}
+a:nth-child(4) {
+	width: 160px;
+}
+a:nth-child(5) {
+	width: 200px;
+}
+
+a:nth-child(6) {
+	width: 180px;
+}
+
+a:nth-child(7) {
+	width: 100px;
+}
+
+			
+nav .start-home, a:nth-child(1):hover~.animation {
+	width: 100px;
+	left: 0;
+	background-color: #1abc9c;
+}
+nav .start-vagas, a:nth-child(2):hover~.animation {
+	width: 110px;
+	left: 100px;
+	background-color: #e74c3c;
+}
+nav .start-empresas, a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 210px;
+	background-color: #3498db;
+}
+nav .start-publicarvagas, a:nth-child(4):hover~.animation {
+	width: 160px;
+	left: 310px;
+	background-color: #9b59b6;
+}
+nav .start-vagascadidatadas, a:nth-child(5):hover~.animation {
+	width: 200px;
+	left: 470px;
+	background-color: #e67e22;
+}
+
+nav .start-Cursos Profissionalizantes, a:nth-child(6):hover~.animation {
+	width: 180px;
+	left: 670px;
+	background-color: #ff0080;
+}
+
+nav .start-faleconosco, a:nth-child(7):hover~.animation {
+	width: 100px;
+	left: 850px;
+	background-color: #8080ff;
+}
+
+#menu body {
+	font-size: 12px;
+	font-family: sans-serif;
+	background: #2c3e50;
+}
+#menu h1 {
+	text-align: center;
+	margin: 40px 0 40px;
+	text-align: center;
+	font-size: 30px;
+	color: #ecf0f1;
+	text-shadow: 2px 2px 4px #000000;
+	font-family: 'Cherry Swash', cursive;
+}
+
+#menu p {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #ecf0f1;
+    font-family: 'Cherry Swash',cursive;
+    font-size: 16px;
+}
+
+span {
+    color: #2BD6B4;
+}
+
+
+/**------- Final css do Menu  ------*/

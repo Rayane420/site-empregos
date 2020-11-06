@@ -12,27 +12,11 @@
 </head>
 
 	<h:body>
+		
+		<div id="menu">
 		<ui:include src="menu.xhtml"/>
-		<center>
-		<h:form id="formLogin" style="margin-top:15%;" >
-			<div id="titulo">Realize o login abaixo</div>
-				<p:panelGrid columns="2">
-				
-					<p:outputLabel value="Login: "/>
-					<p:inputText value="#{pessoaBean.usuarioPessoa.login}"/>
-					<p:outputLabel value="Senha: "/>
-					<p:password value="#{pessoaBean.usuarioPessoa.senha}"/>
-					
-					<p:commandButton value="Logar" action="#{pessoaBean.logar}"/>
-				</p:panelGrid>
-			
-		</h:form>
-		<br/>
-			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			<a style="margin-top:20%;" href="recuperarSenha.jsf">Recuperar senha </a>
-			&nbsp; &nbsp; &nbsp; &nbsp;
-			<a href="cadastroUsuario.jsf">  Fazer Cadastro</a>
-		</center>
+		</div>
+		
 		
 	</h:body>
 
