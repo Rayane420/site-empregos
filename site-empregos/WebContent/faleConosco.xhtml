@@ -7,7 +7,7 @@
 	  
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-		<link rel="stylesheet" href="Resources/css/estilo.css"/>
+		<link rel="stylesheet" href="Resources/css/estiloForm.css"/>
 	</h:head>	  
 
 <h:body>
@@ -15,11 +15,59 @@
 		<ui:include src="menu.xhtml"/>
 		
 		<center><p:graphicImage height="30%" width="20%" value="/Resources/img/jobs3.jpg"/></center>
-		<h:form>
+		<br/><br/><br/><br/>
+		
+		
+		<h:form id="formulario">
+		
+		<p:growl showDetail="true" showSummary="false" id="msg"/>
+		<h2> Fale Conosco</h2>
 		<center>
-			<h1>Fale Conosco</h1>
-		</center>	
+		<h:panelGrid >
+				
+				<br/>
+				<legend><h3><span class="number">1</span>Dados de Contato</h3></legend>
+				<br/>
+				
+				<p:outputLabel>Nome Completo: </p:outputLabel>			
+				<p:inputText value="#{pessoaBean.usuarioPessoa.nomeCompleto}" id="nomeC"  size="40" required="true" requiredMessage="Informe seu nome">
+				<p:watermark value="Nome e sobrenome" for="nomeC"></p:watermark>
+				</p:inputText>
+
+				<legend><h3><span class="number">2</span>Informe sua mensagem abaixo:</h3></legend>
+				<br/>
+				
+				<p:outputLabel>Motivo do Contato:</p:outputLabel>
+				<p:selectOneMenu style="width:200"
+				value="#{pessoaBean.usuarioPessoa.sexo}">
+					<f:selectItem itemValue="Problema no Site" itemLabel="Problema no Site"/>
+					<f:selectItem itemValue="Duvida" itemLabel="Duvida"/>
+					<f:selectItem itemValue="Outro" itemLabel="Outro"/>
+				</p:selectOneMenu>
+				
+				<p:outputLabel>Descrição: </p:outputLabel>			
+				<p:inputTextarea rows="8" cols="80" 
+				maxlength="200"   autoResize="false"/>
+			<br/>
+			<br/>
+			<br/>	
+					
+			<p:commandButton value="Enviar Mensagem" ajax="false" 
+			action="#{pessoaBean.salvar}"/>
+
+			
+			
+			
+			</h:panelGrid>
+			</center>
+		
 		</h:form>
+		
+		<br/>
+		<br/>
+		
+		
+		
 		
 		
 		
