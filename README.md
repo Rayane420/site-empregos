@@ -3,13 +3,23 @@
 site de empregos para praticas de conhecimento em java - jpa - hibernate - primefaces - jsf - Css ...
 
 #### O site contará com as seguintes Páginas:
-##### -Home: com opção de pesquisa por vagas cadastradas por empresas e fazer login ou direcionar o usuário para a página de cadastro no sistema, caso o mesmo queira aplicar para uma vaga
-##### -Login
+##### -Home: com opção de busca por vagas e busca por empresas cadastradas no site
+##### -Login:
 ![gif da tela login](https://github.com/Rayane420/site-empregos/blob/master/tela_de_login.gif)
-##### -Pesquisar empresas
-##### -Página de lista de Vagas aplicadas pelo usuário
-##### -Fale-conosco
-##### -Mensagens recebidas
-##### -Procurar candidatos de acordo com o perfil escolhido pela empresa
-##### -Publicar novas vagas
+
+##### - Fale-conosco
+##### - Mensagens recebidas (para empresas, usuários e o administrador do site)
+
+### As Empresas poderão:
+##### -Realizar login ou novo cadastro no sistema
+##### Publicar novas vagas
+##### Gerenciar suas vagas (Alterar status da vaga, descrição e demais informações)
+##### Gerenciar candidaturas realizadas por usuários
+
+### Os Usuários poderão:
+##### -Realizar login ou novo cadastro no sistema
+##### Visualizar as vagas
+##### Verificar informações das empresas
+##### Gerenciar suas vagas candidatas e verificar o status das mesmas
+##### Atualizar perfil
 
